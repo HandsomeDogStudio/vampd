@@ -24,8 +24,8 @@ require 'json'
 
 Vagrant.configure("2") do |config|
   # for Vagrant-provided nfs support
-  #config.nfs.map_uid = 0
-  #config.nfs.map_gid = 0
+  config.nfs.map_uid = 0
+  config.nfs.map_gid = 0
 
   config.omnibus.chef_version = '11.16.2'
   config.berkshelf.enabled = true
@@ -36,12 +36,12 @@ Vagrant.configure("2") do |config|
     server.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210.box"
 
     server.vm.provider "vmware_fusion" do |v|
-      v.vmx["memsize"]  = "1024"
+      v.vmx["memsize"]  = "4096"
     end
 
     server.vm.provider :virtualbox do |v|
       v.name = "vampd"
-      v.customize ["modifyvm", :id, "--memory", "1024"]
+      v.customize ["modifyvm", :id, "--memory", "4096"]
     end
 
     server.vm.hostname = "drupal.local"
@@ -60,6 +60,7 @@ Vagrant.configure("2") do |config|
       chef.add_role("base")
       chef.add_role("example")
       chef.add_role("nfs_export")
+      chef.add_role("drupal8")
     end
   end
 end
