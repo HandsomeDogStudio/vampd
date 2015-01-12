@@ -48,7 +48,7 @@ Vagrant.configure("2") do |config|
 
     server.vm.network :private_network, ip: "192.168.50.5"
 
-    server.vm.synced_folder 'assets', '/assets', disabled: true
+    server.vm.synced_folder 'assets', '/assets', disabled: false
 
 
     server.vm.provision :chef_solo do |chef|
