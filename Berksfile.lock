@@ -5,7 +5,7 @@ DEPENDENCIES
   drupal
     git: https://github.com/vampd/drupal
     revision: 476551cb0702a7df6ae19a23c92642174be1ea47
-    tag: 4.0.3
+    tag: 4.0.5
   drupal-frontend
     git: https://github.com/vampd/drupal-frontend
     revision: d94e35bbc761f84a1fa11a981c324b12b08a55f8
