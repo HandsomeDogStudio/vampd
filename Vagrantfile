@@ -49,10 +49,7 @@ Vagrant.configure("2") do |config|
 
     server.vm.network :private_network, ip: "192.168.50.5"
 
-    server.vm.synced_folder 'assets', '/assets', disabled: false,
-      :owner=> 'vagrant', 
-      :group=>'www-data', 
-      :mount_options => ['dmode=775', 'fmode=775']
+    server.vm.synced_folder 'assets', '/assets', disabled: false
 
     server.vm.provision :chef_solo do |chef|
       chef.log_level = :info
@@ -66,7 +63,7 @@ Vagrant.configure("2") do |config|
         chef.add_role(File.basename(working_dir + chef.roles_path + '/' + path, ".json"))
       end
       chef.add_role("nfs_export")
-      chef.add_role("drupal8")
+      chef.add_role("atrium")
     end
   end
 end
