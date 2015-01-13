@@ -49,8 +49,10 @@ Vagrant.configure("2") do |config|
 
     server.vm.network :private_network, ip: "192.168.50.5"
 
-    server.vm.synced_folder 'assets', '/assets', disabled: false
-
+    server.vm.synced_folder 'assets', '/assets', disabled: false,
+      :owner=> 'vagrant', 
+      :group=>'www-data', 
+      :mount_options => ['dmode=775', 'fmode=775']
 
     server.vm.provision :chef_solo do |chef|
       chef.log_level = :info

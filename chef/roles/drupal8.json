@@ -15,7 +15,7 @@
           "drupal": {
             "settings": {
               "docroot": "",
-              "db_file": ""              
+              "db_file": "/assets/drupal8/drupal8.mysql"              
             }
           },
           "drupal_user": {
