@@ -29,3 +29,6 @@ doc/
 # !chef/roles/base.json
 # !chef/roles/example.json
 # !chef/roles/nfs_export.json
+
+# Ignoring databases belonging to sites
+chef/roles/*/*.mysql
