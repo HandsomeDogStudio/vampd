@@ -63,7 +63,6 @@ Vagrant.configure("2") do |config|
         chef.add_role(File.basename(working_dir + chef.roles_path + '/' + path, ".json"))
       end
       chef.add_role("nfs_export")
-      chef.add_role("atrium")
     end
   end
 end
