@@ -32,3 +32,4 @@ doc/
 
 # Ignoring databases belonging to sites
 chef/roles/*/*.mysql
+chef/roles/*/*.sql

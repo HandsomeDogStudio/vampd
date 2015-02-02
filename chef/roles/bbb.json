@@ -1,30 +1,30 @@
 {
-  "name": "trivids",
-  "description": "The role for trivids",
+  "name": "bbb",
+  "description": "The role for BluHomes Budget Builder",
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {},
   "override_attributes": {
     "drupal": {
       "sites": {
-        "trivids": {
+        "bbb": {
           "active": true,
           "deploy": {
             "action": ["deploy", "import"]
           },
           "drupal": {
             "settings": {
-              "docroot": "",
-              "db_file": "/vagrant/chef/roles/trivids/trivids.mysql"              
+              "docroot": "docroot",
+              "db_file": "/vagrant/chef/roles/bbb/bbb.sql"              
             }
           },
           "drupal_user": {
             "admin_user": "admin"
           },
           "repository": {
-            "host": "github.com",
-            "uri": "git@github.com:jordanlgraham/trivids.git",
-            "revision": "master"
+            "host": "svn-2314.prod.hosting.acquia.com",
+            "uri": "budgetbuilder@svn-2314.prod.hosting.acquia.com:budgetbuilder.git",
+            "revision": "prod"
           }
         }
       }
