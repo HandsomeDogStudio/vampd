@@ -1,5 +1,5 @@
 {
-  "name": "bbb",
+  "name": "egtc",
   "description": "The role for Emily Griffiths Technical College",
   "chef_type": "role",
   "json_class": "Chef::Role",
@@ -7,7 +7,7 @@
   "override_attributes": {
     "drupal": {
       "sites": {
-        "bbb": {
+        "egtc": {
           "active": true,
           "deploy": {
             "action": ["deploy", "install"]
