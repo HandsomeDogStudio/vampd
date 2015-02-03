@@ -24,10 +24,9 @@ require 'json'
 
 Vagrant.configure("2") do |config|
   # for Vagrant-provided nfs support
-  config.nfs.map_uid = 0
-  config.nfs.map_gid = 0
+  #config.nfs.map_uid = 0
+  #config.nfs.map_gid = 0
   working_dir = File.dirname(__FILE__) + "/"
-  
   config.omnibus.chef_version = '11.16.2'
   config.berkshelf.enabled = true
   config.berkshelf.berksfile_path = working_dir + "Berksfile"
@@ -49,7 +48,7 @@ Vagrant.configure("2") do |config|
 
     server.vm.network :private_network, ip: "192.168.50.5"
 
-    server.vm.synced_folder 'assets', '/assets', disabled: false
+    server.vm.synced_folder 'assets', '/assets', disabled: true
 
 
     server.vm.provision :chef_solo do |chef|

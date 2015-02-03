@@ -1,6 +1,6 @@
 {
   "name": "bbb",
-  "description": "The role for BluHomes Budget Builder",
+  "description": "The role for Emily Griffiths Technical College",
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {},
@@ -10,21 +10,20 @@
         "bbb": {
           "active": true,
           "deploy": {
-            "action": ["deploy", "import"]
+            "action": ["deploy", "install"]
           },
           "drupal": {
             "settings": {
-              "docroot": "docroot",
-              "db_file": "/assets/bbb/bbb.sql"              
+              "docroot": ""             
             }
           },
           "drupal_user": {
             "admin_user": "admin"
           },
           "repository": {
-            "host": "svn-2314.prod.hosting.acquia.com",
-            "uri": "budgetbuilder@svn-2314.prod.hosting.acquia.com:budgetbuilder.git",
-            "revision": "prod"
+            "host": "github.com",
+            "uri": "git@github.com:jordanlgraham/egtc.git",
+            "revision": "test"
           }
         }
       }
