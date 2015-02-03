@@ -15,7 +15,7 @@
           "drupal": {
             "settings": {
               "docroot": "docroot",
-              "db_file": "/vagrant/chef/roles/bbb/bbb.sql"              
+              "db_file": "/assets/bbb/bbb.sql"              
             }
           },
           "drupal_user": {
