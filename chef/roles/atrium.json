@@ -1,13 +1,13 @@
 {
-  "name": "egtc",
-  "description": "The role for Emily Griffiths Technical College",
+  "name": "atrium",
+  "description": "The role for my OpenAtrium installation",
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {},
   "override_attributes": {
     "drupal": {
       "sites": {
-        "egtc": {
+        "atrium": {
           "active": true,
           "deploy": {
             "action": ["deploy", "install"]
@@ -22,8 +22,8 @@
           },
           "repository": {
             "host": "github.com",
-            "uri": "git@github.com:jordanlgraham/egtc.git",
-            "revision": "test"
+            "uri": "git@github.com:jordanlgraham/openatrium.git",
+            "revision": "master"
           }
         }
       }
