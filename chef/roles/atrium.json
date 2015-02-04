@@ -10,15 +10,17 @@
         "atrium": {
           "active": true,
           "deploy": {
-            "action": ["deploy"]
+            "action": ["deploy", "import"]
           },
           "drupal": {
             "settings": {
-              "docroot": ""             
-            }
+              "docroot": "",
+              "db_file": "/assets/atrium/atrium.mysql"   
+            },
+            "version": "6.x"
           },
           "drupal_user": {
-            "admin_user": "admin"
+            "admin_user": "jordan"
           },
           "repository": {
             "host": "github.com",
