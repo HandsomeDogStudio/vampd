@@ -10,7 +10,7 @@
         "atrium": {
           "active": true,
           "deploy": {
-            "action": ["deploy", "install"]
+            "action": ["deploy"]
           },
           "drupal": {
             "settings": {
