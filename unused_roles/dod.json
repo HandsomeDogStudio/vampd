@@ -1,13 +1,13 @@
 {
-  "name": "atrium",
-  "description": "The role for my OpenAtrium installation",
+  "name": "dod",
+  "description": "The role for the Deluxe OnDemand site",
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {},
   "override_attributes": {
     "drupal": {
       "sites": {
-        "atrium": {
+        "dod": {
           "active": true,
           "deploy": {
             "action": ["deploy", "import"]
@@ -15,17 +15,16 @@
           "drupal": {
             "settings": {
               "docroot": "",
-              "db_file": "/vagrant/chef/roles/sites/atrium/atrium.mysql"   
-            },
-            "version": "6.x"
+              "db_file": "/vagrant/chef/roles/sites/dod/dod.mysql"   
+            }
           },
           "drupal_user": {
             "admin_user": "jordan"
           },
           "repository": {
-            "host": "github.com",
-            "uri": "git@github.com:jordanlgraham/openatrium.git",
-            "revision": "master"
+            "host": "svn-3453.devcloud.hosting.acquia.com",
+            "uri": "deluxeondemand@svn-3453.devcloud.hosting.acquia.com:deluxeondemand.git",
+            "revision": "prod"
           }
         }
       }
