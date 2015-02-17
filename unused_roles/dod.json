@@ -14,12 +14,12 @@
           },
           "drupal": {
             "settings": {
-              "docroot": "",
-              "db_file": "/vagrant/chef/roles/sites/dod/dod.mysql"   
+              "docroot": "docroot",
+              "db_file": "/vagrant/chef/roles/dod/dod.sql"   
             }
           },
           "drupal_user": {
-            "admin_user": "jordan"
+            "admin_user": "admin"
           },
           "repository": {
             "host": "svn-3453.devcloud.hosting.acquia.com",

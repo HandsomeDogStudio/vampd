@@ -1,13 +1,13 @@
 {
-  "name": "atrium",
-  "description": "The role for my OpenAtrium installation",
+  "name": "anewct",
+  "description": "The role for the ANEWCT site",
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {},
   "override_attributes": {
     "drupal": {
       "sites": {
-        "atrium": {
+        "anewct": {
           "active": true,
           "deploy": {
             "action": ["deploy", "import"]
@@ -15,16 +15,15 @@
           "drupal": {
             "settings": {
               "docroot": "",
-              "db_file": "/vagrant/chef/roles/atrium/atrium.mysql"   
-            },
-            "version": "6.x"
+              "db_file": "/vagrant/chef/roles/anewct/anewct.sql"   
+            }
           },
           "drupal_user": {
-            "admin_user": "jordan"
+            "admin_user": "admin"
           },
           "repository": {
             "host": "github.com",
-            "uri": "git@github.com:jordanlgraham/openatrium.git",
+            "uri": "git@github.com:jordanlgraham/anewct.git",
             "revision": "master"
           }
         }
