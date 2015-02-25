@@ -28,7 +28,7 @@ Vagrant.configure("2") do |config|
   config.omnibus.chef_version = '11.16.2'
   config.berkshelf.enabled = true
   config.berkshelf.berksfile_path = working_dir + "Berksfile"
-  config.vm.define :drupaldev do |server|
+  config.vm.define :trivids do |server|
     server.ssh.forward_agent = true
     server.vm.box = "precise64"
     server.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/ubuntu-server-12042-x64-vbox4210.box"
