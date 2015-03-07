@@ -1,13 +1,13 @@
 {
-  "name": "egtc",
-  "description": "The role for the Emily Griffith Training College site",
+  "name": "hdog",
+  "description": "The role for the HandsomeDog Studio site",
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {},
   "override_attributes": {
     "drupal": {
       "sites": {
-        "egtc": {
+        "hdog": {
           "active": true,
           "deploy": {
             "action": ["deploy", "import"]
@@ -15,16 +15,16 @@
           "drupal": {
             "settings": {
               "docroot": "",
-              "db_file": "/vagrant/chef/roles/egtc/egtc.sql"   
+              "db_file": "/vagrant/chef/roles/hdog/hdog.sql"   
             }
           },
           "drupal_user": {
-            "admin_user": "admin"
+            "admin_user": "Seyore"
           },
           "repository": {
             "host": "github.com",
-            "uri": "git@github.com:jordanlgraham/egtc.git",
-            "revision": "test"
+            "uri": "git@github.com:jordanlgraham/handsomedog.git",
+            "revision": "master"
           }
         }
       }
