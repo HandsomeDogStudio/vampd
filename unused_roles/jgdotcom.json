@@ -1,0 +1,33 @@
+{
+  "name": "jgdotcom",
+  "description": "The role for the jgdotcom site",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "default_attributes": {},
+  "override_attributes": {
+    "drupal": {
+      "sites": {
+        "jgdotcom": {
+          "active": true,
+          "deploy": {
+            "action": ["deploy", "import"]
+          },
+          "drupal": {
+            "settings": {
+              "docroot": "",
+              "db_file": "/vagrant/chef/roles/jgdotcom/jgdotcom.sql"   
+            }
+          },
+          "drupal_user": {
+            "admin_user": "jordan"
+          },
+          "repository": {
+            "host": "github.com",
+            "uri": "git@github.com:jordanlgraham/jgdotcom.git",
+            "revision": "master"
+          }
+        }
+      }
+    }
+  }
+}

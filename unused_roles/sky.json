@@ -1,0 +1,33 @@
+{
+  "name": "sky",
+  "description": "The role for the Skyde site",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "default_attributes": {},
+  "override_attributes": {
+    "drupal": {
+      "sites": {
+        "sky": {
+          "active": true,
+          "deploy": {
+            "action": ["deploy", "import"]
+          },
+          "drupal": {
+            "settings": {
+              "docroot": "docroot",
+              "db_file": "/vagrant/chef/roles/sky/sky.sql"   
+            }
+          },
+          "drupal_user": {
+            "admin_user": "admin"
+          },
+          "repository": {
+            "host": "svn-3453.devcloud.hosting.acquia.com",
+            "uri": "skydex@svn-3453.devcloud.hosting.acquia.com:skydex.git",
+            "revision": "dev"
+          }
+        }
+      }
+    }
+  }
+}

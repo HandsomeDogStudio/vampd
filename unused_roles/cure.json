@@ -1,0 +1,33 @@
+{
+  "name": "cure",
+  "description": "The role for the Project C.U.R.E. site",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "default_attributes": {},
+  "override_attributes": {
+    "drupal": {
+      "sites": {
+        "cure": {
+          "active": true,
+          "deploy": {
+            "action": ["deploy", "import"]
+          },
+          "drupal": {
+            "settings": {
+              "docroot": "",
+              "db_file": "/vagrant/chef/roles/cure/cure.sql"   
+            }
+          },
+          "drupal_user": {
+            "admin_user": "root"
+          },
+          "repository": {
+            "host": "github.com",
+            "uri": "git@github.com:HandsomeDogStudio/cure.git",
+            "revision": "master"
+          }
+        }
+      }
+    }
+  }
+}
