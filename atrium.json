@@ -15,7 +15,7 @@
           "drupal": {
             "settings": {
               "docroot": "",
-              "db_file": "/vagrant/chef/roles/atrium/atrium.sql"   
+              "db_file": "/vagrant/chef/roles/atrium/atrium.mysql"   
             },
             "version": "6.x"
           },

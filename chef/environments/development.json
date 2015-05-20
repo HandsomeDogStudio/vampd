@@ -20,9 +20,9 @@
       "prefork": {
         "startservers": "1",
         "minspareservers": "1",
-        "maxspareservers": "5",
-        "maxclients": "6",
-        "serverlimit": "6",
+        "maxspareservers": "19",
+        "maxclients": "20",
+        "serverlimit": "20",
         "keepalive": "On",
         "keepalivetimeout": "4",
         "maxkeepaliverequests": "1000"
