@@ -1,21 +1,21 @@
 {
-  "name": "ccrx",
-  "description": "The role for the Crystal Clear RX site",
+  "name": "streaming",
+  "description": "The role for the TriVids Streaming clip site",
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {},
   "override_attributes": {
     "drupal": {
       "sites": {
-        "ccrx": {
+        "streaming": {
           "active": true,
           "deploy": {
-            "action": ["deploy", "import"]
+            "action": ["deploy", "install"]
           },
           "drupal": {
             "settings": {
               "docroot": "",
-              "db_file": "/vagrant/chef/roles/ccrx/ccrx.sql"   
+              "db_file": "/vagrant/chef/roles/streaming/streaming.sql"   
             }
           },
           "drupal_user": {
@@ -23,7 +23,7 @@
           },
           "repository": {
             "host": "github.com",
-            "uri": "git@github.com:jordanlgraham/ccrx.git",
+            "uri": "git@github.com:HandsomeDogStudio/trivids_streaming.git",
             "revision": "master"
           }
         }
