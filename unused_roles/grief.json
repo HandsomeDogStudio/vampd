@@ -1,6 +1,6 @@
 {
   "name": "grief",
-  "description": "The role for the Grieflink original site, not the rebuild.",
+  "description": "The role for the grief rebuild site.",
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {},
@@ -23,7 +23,7 @@
           },
           "repository": {
             "host": "github.com",
-            "uri": "git@github.com:HandsomeDogStudio/grief.git",
+            "uri": "git@github.com:jordanlgraham/grief.git",
             "revision": "master"
           }
         }
