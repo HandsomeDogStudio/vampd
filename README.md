@@ -1,7 +1,7 @@
 vampd
 =================
 
-vampd is a vagrant chef provisioner that looks to ease local drupal development by automating the overhead of setting up the server, placing the files, and running the commands. Through vampd, all of this will be automated and can be customized to your needs.
+vampd is a lamp stack and drupal automation machine! vampd stands for virtualized-apache-mysql-php-drupal. It is a vagrant chef provisioner that looks to ease local drupal development by automating the overhead of setting up the server, placing the files, and running the commands. Through vampd, all of this will be automated and can be customized to your needs.
 
 vampd looks to become a one stop solution for local development and deployment
 strategy helping to standardize processes and dev flow without constricting the
@@ -9,13 +9,25 @@ environments or needs of the developer. Our vision is to increase productivity
 by providing a stable, reproducible, virtualized environments that include
 meet all your drupal needs.
 
+Installs
+--------
+* Ubuntu 14.04 (default)
+** Apache 2.4
+** PHP 5.5
+** MySQL 5.5
+* Ubuntu 12.04 (optional)
+** Apache 2.2
+** PHP 5.3
+** MySQL 5.5
+
+
 Installation Instructions
 -------------------------
 
 The install of vampd is not the easiest thing, but if you are familiar with the
 command line, should be fairly simple.
 
-First thing is first, you will need to install [vagrant](https://www.vagrantup.com/downloads.html),
+First things first, you will need to install [vagrant](https://www.vagrantup.com/downloads.html),
 [virtualbox](https://www.virtualbox.org/wiki/Downloads) and [ChefDK](https://downloads.getchef.com/chef-dk/).
 If you are on a Mac you will also need to install X-code from the App store (for Git).
 
@@ -31,6 +43,7 @@ git clone https://github.com/vampd/vampd.git
 cd vampd
 vagrant plugin install vagrant-berkshelf
 vagrant plugin install vagrant-omnibus
+vagrant plugin install vagrant-cachier
 vagrant up
 ```
 
@@ -66,10 +79,21 @@ server.vm.synced_folder 'assets', '/assets', disabled: true
 
 Run 'vagrant up' from your machine (or 'vagrant provision' if your vbox is already running), then:
 
-On an OSX run:  `sudo mount -o resvport 192.168.50.5:/assets /assets`
+1. At the command line, cd into the vampd root directory and mkdir assets
 
-On linux run: `sudo mount 192.168.50.5:/assets /assets`
+1. Mount the virtual machine's /assets directory to vampd/assets:
 
+	On an OSX run:  `sudo mount -o resvport 192.168.50.5:/assets assets`, or
+
+  On linux run: `sudo mount 192.168.50.5:/assets assets`
+
+NOTE: Your local machine might not have an `/assets` folder. To create one, `mkdir /assets`. Also, note it is possible to mount the folder to another folder of your choosing. The directory `/assets` guarantees the path is the same as that of the virtualized machine. This is neccessary under some conditions, such as gitsubmodules.
+
+In the event that you get an `mount_nfs: can't mount :/assets from 192.168.50.5 onto /Users/username/vagrant/vampd/assets: RPC prog. not avail` error or similar, you may have to start/restart nfs on your Vagrant instance.  
+
+1. From your local machine, ssh into your Vagrant instance using `vagrant ssh <identifier>`
+1. `sudo su` to root directory
+1. run `/etc/init.d/nfs-kernel-server restart`  -- if you get ` * Usage: nfs-kernel-server {start|stop|status|reload|force-reload|restart}` then run `start` instead of `restart`
 
 ##Mounting the assets through Samba
 To mount your local machine to the host, you will need to do some leg work, but it
@@ -108,6 +132,12 @@ $aliases['local'] = array(
 );
 ```
 Now you can access your site from your local machine by using drush @[site name].local [command]
+
+##Connect to mysql from host machine
+
+```
+mysql -uroot -p -hdrupal.local
+```
 
 ##Now let's have some fun.
 

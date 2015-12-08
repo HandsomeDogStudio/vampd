@@ -1,21 +1,21 @@
 {
-  "name": "streaming",
-  "description": "The role for the TriVids Streaming clip site",
+  "name": "lotus",
+  "description": "The role for the Lotus Elephant Sanctuary site",
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {},
   "override_attributes": {
     "drupal": {
       "sites": {
-        "streaming": {
+        "lotus": {
           "active": true,
           "deploy": {
-            "action": ["deploy", "install"]
+            "action": ["deploy", "import"]
           },
           "drupal": {
             "settings": {
               "docroot": "",
-              "db_file": "/vagrant/chef/roles/streaming/streaming.sql"   
+              "db_file": "/vagrant/chef/roles/lotus/lotus.sql"   
             }
           },
           "drupal_user": {
@@ -23,7 +23,7 @@
           },
           "repository": {
             "host": "github.com",
-            "uri": "git@github.com:jordanlgraham/streaming-2.git",
+            "uri": "git@github.com:HandsomeDogStudio/lotus.git",
             "revision": "master"
           }
         }
