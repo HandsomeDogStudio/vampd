@@ -1,29 +1,29 @@
 {
-  "name": "hdog",
-  "description": "The role for the hdog site",
+  "name": "op",
+  "description": "The role for the Open Pediatrics site",
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {},
   "override_attributes": {
     "drupal": {
       "sites": {
-        "hdog": {
+        "op": {
           "active": true,
           "deploy": {
             "action": ["deploy", "import"]
           },
           "drupal": {
             "settings": {
-              "docroot": "",
-              "db_file": "/vagrant/chef/roles/hdog/hdog.sql"   
+              "docroot": "docroot",
+              "db_file": "/vagrant/chef/roles/op/op.sql"   
             }
           },
           "drupal_user": {
-            "admin_user": "jordan"
+            "admin_user": "admin"
           },
           "repository": {
-            "host": "github.com",
-            "uri": "git@github.com:jordanlgraham/handsomedog.git",
+            "host": "bitbucket.org",
+            "uri": "git@bitbucket.org:bluecodabits/op.git",
             "revision": "master"
           }
         }

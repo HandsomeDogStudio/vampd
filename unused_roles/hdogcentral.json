@@ -1,13 +1,13 @@
 {
-  "name": "hdog",
-  "description": "The role for the hdog site",
+  "name": "hdogcentral",
+  "description": "The role for the hdogcentral site",
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {},
   "override_attributes": {
     "drupal": {
       "sites": {
-        "hdog": {
+        "hdogcentral": {
           "active": true,
           "deploy": {
             "action": ["deploy", "import"]
@@ -15,15 +15,15 @@
           "drupal": {
             "settings": {
               "docroot": "",
-              "db_file": "/vagrant/chef/roles/hdog/hdog.sql"   
+              "db_file": "/vagrant/chef/roles/hdogcentral/hdogcentral.sql"   
             }
           },
           "drupal_user": {
-            "admin_user": "jordan"
+            "admin_user": "seyore"
           },
           "repository": {
             "host": "github.com",
-            "uri": "git@github.com:jordanlgraham/handsomedog.git",
+            "uri": "git@github.com:jordanlgraham/openatrium.git",
             "revision": "master"
           }
         }

@@ -1,6 +1,6 @@
 {
   "name": "atrium",
-  "description": "The role for my OpenAtrium installation",
+  "description": "The role for my LOCAL, DRUPAL 6 OpenAtrium installation",
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {},
@@ -24,7 +24,7 @@
           },
           "repository": {
             "host": "github.com",
-            "uri": "git@github.com:jordanlgraham/openatrium.git",
+            "uri": "git@github.com:jordanlgraham/atrium.git",
             "revision": "master"
           }
         }

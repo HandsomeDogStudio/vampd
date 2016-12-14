@@ -1,29 +1,29 @@
 {
-  "name": "soar",
-  "description": "The role for the SOAR charter school site",
+  "name": "cra",
+  "description": "The role for the Charles River Associates Inc site",
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {},
   "override_attributes": {
     "drupal": {
       "sites": {
-        "soar": {
+        "cra": {
           "active": true,
           "deploy": {
             "action": ["deploy", "import"]
           },
           "drupal": {
             "settings": {
-              "docroot": "",
-              "db_file": "/vagrant/chef/roles/soar/soar.sql"   
+              "docroot": "docroot",
+              "db_file": "/vagrant/chef/roles/cra/cra.sql"   
             }
           },
           "drupal_user": {
             "admin_user": "admin"
           },
           "repository": {
-            "host": "github.com",
-            "uri": "git@github.com:HandsomeDogStudio/soar.git",
+            "host": "svn-2420.devcloud.hosting.acquia.com",
+            "uri": "mlynchcraicom@svn-2420.devcloud.hosting.acquia.com:mlynchcraicom.git",
             "revision": "master"
           }
         }

@@ -1,21 +1,21 @@
 {
-  "name": "lotus",
-  "description": "The role for the Lotus Elephant Sanctuary site",
+  "name": "numerix",
+  "description": "The role for the Numerix site on Pantheon",
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {},
   "override_attributes": {
     "drupal": {
       "sites": {
-        "lotus": {
+        "numerix": {
           "active": true,
           "deploy": {
             "action": ["deploy", "import"]
           },
           "drupal": {
             "settings": {
-              "docroot": "",
-              "db_file": "/vagrant/chef/roles/lotus/lotus.sql"   
+              "docroot": "docroot",
+              "db_file": "/vagrant/chef/roles/numerix/numerix.sql"   
             }
           },
           "drupal_user": {
@@ -23,7 +23,7 @@
           },
           "repository": {
             "host": "github.com",
-            "uri": "git@github.com:HandsomeDogStudio/lotus.git",
+            "uri": "git@github.com:jordanlgraham/numerix.git",
             "revision": "master"
           }
         }

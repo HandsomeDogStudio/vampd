@@ -1,29 +1,29 @@
 {
-  "name": "egtc",
-  "description": "The role for the egtc site on Acquia.",
+  "name": "finishline",
+  "description": "The role for the TriVids finishline clip site",
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {},
   "override_attributes": {
     "drupal": {
       "sites": {
-        "egtc": {
+        "finishline": {
           "active": true,
           "deploy": {
             "action": ["deploy", "import"]
           },
           "drupal": {
             "settings": {
-              "docroot": "docroot",
-              "db_file": "/vagrant/chef/roles/egtc/egtc.sql"   
+              "docroot": "",
+              "db_file": "/vagrant/chef/roles/finishline/finishline.sql"   
             }
           },
           "drupal_user": {
             "admin_user": "admin"
           },
           "repository": {
-            "host": "svn-4053.devcloud.hosting.acquia.com",
-            "uri": "egtc@svn-4053.devcloud.hosting.acquia.com:egtc.git",
+            "host": "github.com",
+            "uri": "git@github.com:jordanlgraham/finishline.git",
             "revision": "master"
           }
         }

@@ -1,30 +1,30 @@
 {
-  "name": "dod",
-  "description": "The role for the Deluxe OnDemand site",
+  "name": "d7",
+  "description": "The role for a basic Drupal 7 site",
   "chef_type": "role",
   "json_class": "Chef::Role",
   "default_attributes": {},
   "override_attributes": {
     "drupal": {
       "sites": {
-        "dod": {
+        "d7": {
           "active": true,
           "deploy": {
-            "action": ["deploy", "import"]
+            "action": ["deploy"]
           },
           "drupal": {
             "settings": {
-              "docroot": "docroot",
-              "db_file": "/vagrant/chef/roles/dod/dod.sql"   
+              "docroot": "",
+              "db_file": "/vagrant/chef/roles/d7/d7.sql"   
             }
           },
           "drupal_user": {
             "admin_user": "admin"
           },
           "repository": {
-            "host": "svn-3453.devcloud.hosting.acquia.com",
-            "uri": "deluxeondemand@svn-3453.devcloud.hosting.acquia.com:deluxeondemand.git",
-            "revision": "prod"
+            "host": "github.com",
+            "uri": "git@github.com:drupal/drupal.git",
+            "revision": "7.x"
           }
         }
       }
