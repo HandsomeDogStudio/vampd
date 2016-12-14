@@ -29,9 +29,13 @@ Vagrant.configure("2") do |config|
   config.vm.define :finishline do |server|
     server.ssh.forward_agent = true
 
+    # Ubuntu 16.10 Yakkety Yak
+    server.vm.box = "yakkety"
+    server.vm.box_url = "http://cloud-images.ubuntu.com/yakkety/current/yakkety-server-cloudimg-amd64-vagrant.box"
+
     # Ubuntu 14.04
-    server.vm.box = "trusty64"
-    server.vm.box_url = "https://oss-binaries.phusionpassenger.com/vagrant/boxes/latest/ubuntu-14.04-amd64-vbox.box"
+    # server.vm.box = "trusty64"
+    # server.vm.box_url = "https://oss-binaries.phusionpassenger.com/vagrant/boxes/latest/ubuntu-14.04-amd64-vbox.box"
 
     # Ubuntu 12.04
     # server.vm.box = "precise64current"
