@@ -38,7 +38,7 @@ Vagrant.configure("2") do |config|
     end
 
     server.vm.provider :virtualbox do |v|
-      v.name = "trivids"
+      v.name = "finishline"
       v.customize ["modifyvm", :id, "--memory", "4096"]
     end
 
