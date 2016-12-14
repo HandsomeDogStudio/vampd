@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
   config.omnibus.chef_version = '11.16.2'
   config.berkshelf.enabled = true
   config.berkshelf.berksfile_path = working_dir + "Berksfile"
-  config.vm.define :drupaldev do |server|
+  config.vm.define :finishline do |server|
     server.ssh.forward_agent = true
 
     # Ubuntu 14.04
